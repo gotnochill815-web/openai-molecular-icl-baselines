@@ -76,3 +76,4 @@ Per-generation outputs are provided under `results/`:
 - `random_5shot_20_results.csv`
 - `nearest_5shot_20_results.csv`
 - `zero_shot_20_results.csv`
+<img width="768" height="498" alt="image" src="https://github.com/user-attachments/assets/595f2ea7-38d4-477c-a23d-088f0b63aa8f" />

@@ -3,6 +3,7 @@ import re
 import random
 import numpy as np
 import pandas as pd
+from pathlib import Path
 
 from openai import OpenAI
 from rdkit import Chem
@@ -13,21 +14,23 @@ from rdkit.Chem import Crippen
 # PATHS
 # ============================================================
 
-BASE = "/home/intern1/CFG_test"
+REPO_DIR = Path(__file__).resolve().parent
 
-TRAIN_PATH = (
-    f"{BASE}/data/guacamol_500k/"
-    "train_500k.csv"
+DATA_ROOT = Path(
+    os.environ.get(
+        "GUACAMOL_500K_DIR",
+        REPO_DIR / "data" / "guacamol_500k",
+    )
 )
 
-TEST_PATH = (
-    f"{BASE}/data/guacamol_500k/"
-    "test_500k.csv"
-)
+TRAIN_PATH = DATA_ROOT / "train_500k.csv"
+TEST_PATH = DATA_ROOT / "test_500k.csv"
 
-OUTPUT_DIR = (
-    f"{BASE}/outputs/baselines/openai/"
-    "gpt-5-mini/logp"
+OUTPUT_DIR = Path(
+    os.environ.get(
+        "OPENAI_OUTPUT_DIR",
+        REPO_DIR / "outputs",
+    )
 )
 
 
